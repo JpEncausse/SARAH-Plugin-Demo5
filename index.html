@@ -1,0 +1,97 @@
+<div id="demo5">
+  <script src="/assets/demo5/webapp/index.js"></script>
+  <div class="row-fluid">
+    <div class="span8">
+      
+      <h4>Structure</h4>
+      
+      <p>
+        La documentation d'un plugin est intégrée dans une page portail 
+        contruite avec <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>. 
+        <ul>
+          <li>Les titres commencent à <code>H4</code></li>
+          <li>Le template est structuré en grille de 12 cases (<code>span1</code> à <code>span12</code>)</li>
+        </ul> 
+      </p>
+      
+      <h5>Code</h5>
+      <p>Il est possible de citer des termes techniques avec <code>&lt;code&gt;</code>.</p>
+<pre>
+  Et il est possible de mettre des exemples de code avec la balise &lt;pre&gt;
+</pre>
+
+      <h5>Composants</h5>
+      <p>Avec les composants Bootstrap vous pouvez faire des onglets ou des menus</p>
+
+      <ul class="nav nav-tabs">
+			  <li class="active"><a href="#">Exemples</a></li>
+			  <li><a href="#">Démo 1</a></li>
+			  <li><a href="#">Démo 2</a></li>
+			</ul>
+      
+      <div class="row-fluid">
+        <div class="span3">
+		      <ul class="nav nav-list well">
+					  <li class="nav-header">Exemples</li>
+					  <li class="active"><a href="#" data-toggle="demo1">Démo 1</a></li>
+					  <li><a href="#" data-toggle="demo2">Démo 2</a></li>
+					  <li><a href="#">...</a></li>
+					</ul>
+        </div>
+        <div class="span9">
+          <div id="demo1" class="nav-pane">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+          <div id="demo2" class="nav-pane" style="display: none">
+             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          </div>
+        </div>
+      </div>
+      
+      <h4>Portlet</h4>
+      
+      <p>
+       Il est possible de surcharger les faces des portlets avec <code>portlet.html</code>
+       et <code>portlet_back.html</code>. Si les 2 sont définis les boutons apparaissent dans le dos.
+      </p>
+      
+      <h5>Taille</h5>
+      
+      <p>
+        Il est possible de configurer les portlets pour qu'elles occupent plus de place.
+        Et les préconfigurer dans le <code>plugin.prop</code>.
+      </p>
+      
+      <img src="/assets/demo5/webapp/front.jpg" />
+      
+      <h5>Code</h5>
+      <p>Une portlet peut déclarer ses feuilles de style</p>
+<pre>
+&lt;% stylesheet('assets/'+key+'/portlet.css') %&gt;
+</pre>
+      <p>Le singleton <code>SARAH</code> est accessible depuis le HTML. Il est donc possible d'accèder au plugin.</p> 
+<pre>
+var plugin = SARAH.ConfigManager.getModule(key); 
+</pre>
+      <p>Le plugin peut exposer des fonctions qui seront ensuite disponibles depuis la portlet</p>
+<pre>
+var data;
+exports.mafunc = function(){ return data; }
+</pre>
+<pre>
+&lt;%= plugin.mafunc(); %&gt;
+</pre>
+      <p>C'est une solution pour remonter de l'info des plugins. Et mettre en place un stream de donnée WebSocket.</p>
+      <p>Enfin les liens qui ont la classe <code>ajax</code> sont executé en ajax.</p>
+    </div>
+    <div class="span4">
+      <p><img src="/assets/demo5/webapp/logo.png" width="300"/></p>
+      <p>
+        Les images sont stockées dans le dossier <code>/images</code> 
+        et accessible via l'URL <code>/assets/{plugin}/images/{file.ext}</code>
+      </p>
+    
+    </div>
+  </div>
+
+</div>

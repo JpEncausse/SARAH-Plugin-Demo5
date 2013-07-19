@@ -1,0 +1,9 @@
+<% stylesheet('assets/'+key+'/webapp/portlet.css') %>
+<% var plugin = SARAH.ConfigManager.getModule(key); %>
+
+<div class="logo">
+  <a href="sarah/demo5" class="ajax"><img src="assets/demo5/webapp/logo.png"></a>
+</div>
+<div class="text">
+  <div class="var"><%= plugin.mafunc() %></div>
+</div>

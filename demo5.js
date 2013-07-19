@@ -48,3 +48,11 @@ var sendURL = function(url, callback, cb){
   });
 
 }
+
+
+var data = "Hello";
+exports.mafunc = function(){ return data; }
+
+
+
+
