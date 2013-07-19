@@ -1,0 +1,9 @@
+{
+  "modules" : { 
+    "demo5"  : {
+      "description": "Demo de requête HTTP",
+      "version"    : "1.0",
+      "my_url"     : ""
+    }
+  }
+}
